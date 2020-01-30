@@ -2,3 +2,46 @@
     margin: 0;
     padding: 0;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+/***************************/
+/* HEADER */
+/***************************/
+
+#header-container {
+    background-color: #ffd54f;;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 1200px;
+}
+
+#header > h1 {
+    text-align: center;
+    font-size: 13vw;
+    font-family: "Righteous", cursive;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+/* Set max font size for header to 13% of 800px viewport */
+@media screen and (min-width: 800px) {
+    #header > h1 {
+        font-size: 104px;
+    }
+}
+
+div#logo {
+    content:url(kinemat_logo.png);
+    max-width: 25%;
+    padding: 10px;
+}
