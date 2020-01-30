@@ -41,7 +41,7 @@
 }
 
 div#logo {
-    content:url(kinemat_logo.png);
+    content:url(images/kinemat_logo.png);
     max-width: 25%;
     padding: 10px;
 }
