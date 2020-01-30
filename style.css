@@ -74,6 +74,15 @@ div#logo {
 
 .carrousel-slide {
     position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 800ms, opacity 800ms;
+}
+
+.carrousel-slide.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 800ms;
 }
 
 .carrousel img {
@@ -84,4 +93,6 @@ div#logo {
     .carrousel input {
         width: 25px;
     }
+
+
 }
