@@ -89,10 +89,35 @@ div#logo {
     max-width: 100%;
 }
 
-@media screen and (max-width: 600px) {
-    .carrousel input {
-        width: 25px;
-    }
+#button-left, #button-right {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 30px;
+    user-select: none;
+    top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  border-radius: 0 3px 3px 0;
+}
 
+#button-left:hover, #button-right:hover {
+    background-color: #ccc;
+}
 
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 2px;
+    background-color: #bbb;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.dot-nav {
+    text-align: center;
+}
+
+.dot.active {
+    background-color: #717171;
 }
