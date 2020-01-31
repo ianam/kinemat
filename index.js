@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttonRight = document.getElementById('button-right');
     const buttonLeft = document.getElementById('button-left');
 
-    buttonRight.addEventListener('click', () => {
+    function nextSlide() { 
         for (let i = 0; i < slides.length; i ++) {
             // if not on the last slide
             if (i < slides.length - 1) {
@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 dots[0].classList.toggle('active');
             };
         };
-    });
+    };
 
-    buttonLeft.addEventListener('click', () => {
+    function prevSlide() {
         for (let i = slides.length - 1; i >= 0; i --) {
             // if not on the first slide
             if (i > 0) {
@@ -49,6 +49,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 dots[slides.length - 1].classList.toggle('active');
             };
         };
+    };
+
+    buttonRight.addEventListener('click', () => {
+        nextSlide();
     });
 
+    buttonLeft.addEventListener('click', () => {
+        prevSlide();
+    });
+
+    // Allow slide selection by dot click
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].addEventListener('click', () => {
+            for (let k = 0; k < dots.length; k++) {
+                dots[k].classList.remove('active');
+            };
+            for (let j = 0; j < slides.length; j ++) {
+                if (slides[j].classList.contains('visible')) {
+                    slides[j].classList.toggle('visible')
+                    slides[i].classList.toggle('visible')
+                }
+            };
+            dots[i].classList.toggle('active')
+        });
+    }
+
+    // Clicking on slide moves to next slide
+    for (let i = 0; i < slides.length; i ++) {
+        slides[i].addEventListener('click', () => {
+            nextSlide();
+        });
+    };
 });

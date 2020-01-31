@@ -87,6 +87,7 @@ div#logo {
 
 .carrousel img {
     max-width: 100%;
+    touch-action: pan-right;
 }
 
 #button-left, #button-right {
@@ -95,14 +96,24 @@ div#logo {
     font-size: 30px;
     user-select: none;
     top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  border-radius: 0 3px 3px 0;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    border-radius: 0 3px 3px 0;
 }
 
 #button-left:hover, #button-right:hover {
     background-color: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+    #button-left, #button-right {
+        display: none;
+    }
+
+    .dot-nav {
+        margin-top: 20px;
+    }
 }
 
 .dot {
