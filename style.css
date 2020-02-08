@@ -210,10 +210,14 @@ div#logo {
 
 #insta-feed {
     display: flex;
-    align-items: center;
 }
 
 .card {
     max-width: 300px;
+    width: 100%;
+    border: thin solid magenta;
+}
+
+.card img {
     width: 100%;
 }

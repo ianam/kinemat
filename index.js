@@ -99,7 +99,42 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.json();
     })
     .then(posts => {
-        console.log(posts.data)
+        // For each piece of data, push the post ID into our ID array
+        for (el of posts.data) {
+            idArr.push(el.id);
+        }
+
+        // Fetch individual posts by ID
+        for (id of idArr) {
+            fetch(`https://graph.instagram.com/${id}?fields=id,media_type,media_url,caption,permalink,timestamp&access_token=${token}`)
+                .then(response => {
+                    return response.json();
+                })
+                .then(fields => {
+                    // Use fields to populate the page with cards
+                    const card = document.createElement('div');
+                    card.setAttribute('class', 'card');
+
+                    const image = document.createElement('img');
+                    image.src = fields.media_url;
+
+                    const link = document.createElement('a');
+                    link.href = fields.permalink;
+                    link.appendChild(image);
+
+                    const caption = document.createElement('p');
+                    caption.textContent = fields.caption;
+
+                    const timestamp = document.createElement('p');
+                    timestamp.textContent = fields.timestamp;
+
+                    app.appendChild(card);
+
+                    card.appendChild(link);
+                    card.appendChild(caption);
+                    card.appendChild(timestamp);
+                });
+        }
     })
     .catch(error => {
         console.log("There was an error", error)
