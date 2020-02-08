@@ -203,3 +203,17 @@ div#logo {
     font-family: Arial, Helvetica, sans-serif;
     color: #1b1b1b;
 }
+
+/***************************/
+/* INSTAGRAM */
+/***************************/
+
+#insta-feed {
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    max-width: 300px;
+    width: 100%;
+}

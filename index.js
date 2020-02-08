@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    /***************************/
+    /* CARROUSEL */
+    /***************************/
+
     const slides = document.getElementsByClassName('carrousel-slide');
     const dots = document.getElementsByClassName('dot');
     const buttonRight = document.getElementById('button-right');
@@ -81,4 +85,24 @@ document.addEventListener('DOMContentLoaded', () => {
             nextSlide();
         });
     };
+
+    /***************************/
+    /* INSTAGRAM */
+    /***************************/
+    const token = 'IGQVJWcFFJWWJsSGZAEazhsdXY2LU51ZA2JxV1MxQms3RkVPVklqMnFkZAmxCbjJUN1luWnE2TndiVy1fMkh0Q1hLVVdXa0lodDhWbEZAYZAnktUXF1dWdnMTFUVVFic2FMSFhOc2ZAmaE1R';
+    const app = document.getElementById('insta-feed');
+    let idArr = [];
+
+    // Get posts list
+    fetch(`https://graph.instagram.com/17841419281502081/media?access_token=${token}`)
+    .then(response => {
+        return response.json();
+    })
+    .then(posts => {
+        console.log(posts.data)
+    })
+    .catch(error => {
+        console.log("There was an error", error)
+    });
+
 });
