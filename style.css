@@ -177,12 +177,12 @@ div#logo {
     }
 }
 
-.col#col1 {
+.col#col-img {
     border: thin solid red;
     flex: 2 1 0;
 }
 
-.col#col2 {
+.col#col-txt {
     border: thin solid green;
     width: 400px;
     flex: 1 1 0;
