@@ -221,3 +221,14 @@ div#logo {
 .card img {
     width: 100%;
 }
+
+/***************************/
+/* CONTACT */
+/***************************/
+
+#contact-form > div {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 15px;
+    padding: 10px;
+    border: thin solid blue;
+}
