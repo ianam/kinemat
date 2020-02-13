@@ -226,9 +226,45 @@ div#logo {
 /* CONTACT */
 /***************************/
 
-#contact-form > div {
+#contact {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#contact > div {
+    margin: 15px;
+    padding: 10px 30px;
+    border: thin solid blue;
+    max-width: 400px;
+}
+
+#contact-form input, textarea {
+    width: 100%;
+    padding: 7px;
+    font-size: 1em;
+    font-family: inherit;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 5px #DCDCDC;
+}
+
+#contact-form textarea {
+    width: 100%;
+}
+
+#contact-form p {
+    padding: 15px 0 5px 0;
+    color: #404040;
+}
+
+/***************************/
+/* PRICING */
+/***************************/
+
+#pricing > div {
     font-family: Arial, Helvetica, sans-serif;
     margin: 15px;
-    padding: 10px;
-    border: thin solid blue;
+    padding: 30px;
+    border: thin solid firebrick;
 }
