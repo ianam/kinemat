@@ -145,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /***************************/
 
     const phone = document.getElementById('phone')
+    const submit = document.getElementById('submit')
 
     phone.addEventListener('keydown', event => {
         const { currentTarget } = event;
@@ -155,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Apply formatting to digits only
-        const input = currentTarget.value.replace(/\D/g, '').substring(0,9);
+        const input = currentTarget.value.replace(/\D/g, '').substring(0,10);
 
         // Format phone numbers (___) ___ - _____
         if (input.length > 6) {
@@ -166,5 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
             currentTarget.value = `(${input.substring(0,3)}`
         }
     })
+
+    submit.addEventListener('submit', () => {
+        console.log('Submitted')
+    });
+
 
 });

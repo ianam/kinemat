@@ -101,20 +101,20 @@
             <p>sales@kinemat.ca</p>
         </div>
         <div id="contact-form">
-            <form>
+            <form method="post" name="contact-form" action="email-form.php">
                 <h2>Contact Form</h2>
                 <p>Name*</p>
-                <input type="text" name="name">
+                <input type="text" name="name" required>
                 <p>Email*</p>
-                <input type="email" name="email">
+                <input type="email" name="email" required>
                 <p>Phone</p>
                 <input type="tel" name="phone" id="phone" placeholder="(___) ___ - _____">
                 <p>Company</p>
                 <input type="text" name="company">
                 <p>Message*</p>
-                <textarea name="message" rows="5" cols="30"></textarea>
+                <textarea name="message" rows="5" cols="30" required></textarea>
                 <br>
-                <input type="submit" value="Submit">
+                <input type="submit" name="submit" id="submit" value="Submit">
             </form>
         </div>
     </div>
