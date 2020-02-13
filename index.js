@@ -140,4 +140,31 @@ document.addEventListener('DOMContentLoaded', () => {
     //     console.log("There was an error", error)
     // });
 
+    /***************************/
+    /* CONTACT */
+    /***************************/
+
+    const phone = document.getElementById('phone')
+
+    phone.addEventListener('keydown', event => {
+        const { currentTarget } = event;
+
+        // Prevent alpha characters
+        if (event.keyCode >= 65 && event.keyCode <= 90) {
+            event.preventDefault();
+        }
+
+        // Apply formatting to digits only
+        const input = currentTarget.value.replace(/\D/g, '').substring(0,9);
+
+        // Format phone numbers (___) ___ - _____
+        if (input.length > 6) {
+            currentTarget.value = `(${input.substring(0,3)}) ${input.substring(3,6)} - ${input.substring(6,10)}`;
+        } else if (input.length > 3) {
+            currentTarget.value = `(${input.substring(0,3)}) ${input.substring(3,6)}`
+        } else if (input.length > 0) {
+            currentTarget.value = `(${input.substring(0,3)}`
+        }
+    })
+
 });

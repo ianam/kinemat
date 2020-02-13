@@ -247,6 +247,13 @@ div#logo {
     border-radius: 5px;
     border: none;
     box-shadow: 5px 5px 5px #DCDCDC;
+    box-sizing: border-box;
+}
+
+#contact-form input[type='submit'] {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: lightblue;
 }
 
 #contact-form textarea {
