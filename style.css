@@ -372,11 +372,53 @@ div#logo {
 /* PRICING */
 /***************************/
 
-#pricing > div {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 15px;
-    padding: 30px;
-    border: thin solid firebrick;
+#pricing {
+    padding: 50px 0;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#price-table {
+    max-width: 1200px;
+    border-collapse: collapse;
+}
+
+#price-table th, tr, td {
+    border-bottom: 1px solid #1b1b1b;
+    padding: 15px;
+}
+
+#price-table th h2 {
+    font-family: "Righteous", sans-serif;
+    font-style: italic;
+    font-size: 50px;
+
+}
+
+#price-table th > img {
+    width: 80%;
+}
+
+#price-table td > img {
+    width: 50%;
+}
+
+#price-table td:not(:first-child) {
+    text-align: center;
+}
+
+#price-table td:first-child {
+    width: 20%;
+    font-weight: 600;
+}
+
+
+#note {
+    width: 1200px;
+    text-align: right;
+    font-style: italic;
+    padding: 5px 0;
 }
 
 /***************************/
