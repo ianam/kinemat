@@ -1,4 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    /***************************/
+    /* NAVBAR */
+    /***************************/
+
+    const header = document.getElementById('header-container');
+    const logo = document.getElementById('logo');
+
+    window.addEventListener('scroll', () => {
+        if (document.documentElement.scrollTop > 80) {
+            header.style.opacity = '0.9';
+            header.style.height = '60px'
+            logo.style['margin-bottom'] = '-70px';
+            logo.style.height = '100px';
+        } else {
+            header.style.opacity = '1';
+            header.style.height = '110px'
+            logo.style['margin-bottom'] = '-100px';
+            logo.style.height = '180px';
+        }
+    })
     
     /***************************/
     /* CARROUSEL */
