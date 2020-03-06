@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kinemat</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Righteous&display=swap" rel="stylesheet">    <script type="text/javascript" src="index.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400|Righteous&display=swap" rel="stylesheet">    <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
     <div class="container" id="header-container">
@@ -94,31 +94,60 @@
     </div>
 
     <div class="container" id="contact">
-        <div>
-            <h2>Questions?</h2>
-            <br>
-            <p>Got a question? Give us a call, email, or fill out our contact form, and we will get in touch as soon as we can.</p>
-            <p class="icon">&#128222;</p>
-            <p>(778) 986-6503</p>
-            <p class="icon">&#9993;</p>
-            <p>sales@kinemat.ca</p>
-        </div>
-        <div id="contact-form">
-            <form method="post" name="contact-form" action="email-form.php">
-                <h2>Contact Form</h2>
-                <p>Name*</p>
-                <input type="text" name="name" required>
-                <p>Email*</p>
-                <input type="email" name="email" required>
-                <p>Phone</p>
-                <input type="tel" name="phone" id="phone" placeholder="(___) ___ - _____">
-                <p>Company</p>
-                <input type="text" name="company">
-                <p>Message*</p>
-                <textarea name="message" rows="5" cols="30" required></textarea>
-                <br>
-                <input type="submit" name="submit" id="submit" value="Submit">
-            </form>
+        <div id="contact-container">
+            <h2>Contact</h2>
+            <div id="contact-cols">
+                <div id="contact-info">
+                    <div class="contact-row">
+                        <img src="images/email-ico.png">
+                        <div>
+                            <p><b>EMAIL US</b></p>
+                            <p>sales@kinemat.ca</p>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <img src="images/phone-ico.png">
+                        <div>
+                            <p><b>CALL US</b></p>
+                            <p>+1 778 968 6503</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact-form">
+                    <form method="post" name="contact-form" action="email-form.php">
+                        <div class="contact-row">
+                            <div>
+                                <p>Name*</p>
+                                <input type="text" name="name" required>
+                            </div>
+                            <div>
+                                <p>Company</p>
+                                <input type="text" name="company">
+                            </div>
+                        </div>
+                        <div class="contact-row">
+                            <div>
+                                <p>Email*</p>
+                                <input type="email" name="email" required>
+                            </div>
+                            <div>
+                                <p>Phone</p>
+                                <input type="tel" name="phone" id="phone" placeholder="(___) ___ - _____">
+                            </div>                       
+                        </div>
+                        <div class="contact-row">
+                            <div>
+                                <p>Message*</p>
+                                <textarea name="message" rows="5" cols="30" required></textarea>
+                            </div>
+                        </div>
+                        <div class="contact-row">
+                            <input type="submit" name="submit" id="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
         </div>
     </div>
 
