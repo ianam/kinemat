@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     /* NAVBAR */
     /***************************/
 
+    // Change navbar display on scroll
     const header = document.getElementById('header-container');
     const logo = document.getElementById('logo');
+    const topScroll = document.getElementById('top-scroll');
 
     window.addEventListener('scroll', () => {
         if (document.documentElement.scrollTop > 80) {
@@ -13,13 +15,26 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.height = '60px'
             logo.style['margin-bottom'] = '-70px';
             logo.style.height = '100px';
+            topScroll.style.visibility = 'visible';
         } else {
             header.style.opacity = '1';
             header.style.height = '110px'
             logo.style['margin-bottom'] = '-100px';
             logo.style.height = '180px';
+            topScroll.style.visibility = 'hidden';
         }
-    })
+    });
+
+    // Create smooth scroll on anchor link click
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', event => {
+            event.preventDefault();
+
+            document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
     
     /***************************/
     /* CARROUSEL */
