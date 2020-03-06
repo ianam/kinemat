@@ -140,8 +140,11 @@ document.addEventListener('DOMContentLoaded', () => {
     //         idArr.push(el.id);
     //     }
 
+    //     // Use only 4 most recent posts
+    //     let idRecent = idArr.slice(0, 4);
+
     //     // Fetch individual posts by ID
-    //     for (id of idArr) {
+    //     for (id of idRecent) {
     //         fetch(`https://graph.instagram.com/${id}?fields=id,media_type,media_url,caption,permalink,timestamp&access_token=${token}`)
     //             .then(response => {
     //                 return response.json();
@@ -159,18 +162,24 @@ document.addEventListener('DOMContentLoaded', () => {
     //                 link.appendChild(image);
 
     //                 const caption = document.createElement('p');
-    //                 caption.textContent = fields.caption;
+    //                 caption.setAttribute('id', 'caption');
+    //                 let formatCaption = fields.caption.replace('\n', '<br><br>')
+    //                 caption.innerHTML = formatCaption;
 
+    //                 // Convert the date from ISO to readable format
     //                 const timestamp = document.createElement('p');
-    //                 timestamp.textContent = fields.timestamp;
+    //                 timestamp.setAttribute('id', 'date');
+    //                 let postDate = new Date(fields.timestamp).toUTCString();
+    //                 postDate = postDate.split(' ').slice(0, 4).join(' ');
+    //                 timestamp.textContent = postDate;
 
     //                 app.appendChild(card);
-
+                    
+    //                 card.appendChild(timestamp);
     //                 card.appendChild(link);
     //                 card.appendChild(caption);
-    //                 card.appendChild(timestamp);
     //             });
-    //     }
+    //     };
     // })
     // .catch(error => {
     //     console.log("There was an error", error)

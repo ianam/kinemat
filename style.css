@@ -262,24 +262,6 @@ div#logo {
 }
 
 /***************************/
-/* INSTAGRAM */
-/***************************/
-
-#insta-feed {
-    display: flex;
-}
-
-.card {
-    max-width: 300px;
-    width: 100%;
-    border: thin solid magenta;
-}
-
-.card img {
-    width: 100%;
-}
-
-/***************************/
 /* CONTACT */
 /***************************/
 
@@ -331,6 +313,7 @@ div#logo {
     border-radius: 3px;
     border: none;
     box-sizing: border-box;
+    resize: none;
 }
 
 .contact-row {
@@ -413,12 +396,46 @@ div#logo {
     font-weight: 600;
 }
 
-
 #note {
     width: 1200px;
     text-align: right;
     font-style: italic;
     padding: 5px 0;
+}
+
+/***************************/
+/* INSTAGRAM */
+/***************************/
+
+#news-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat', sand-serif;
+}
+
+#insta-feed {
+    display: flex;
+}
+
+.card {
+    max-width: 300px;
+    width: 100%;
+    border: thin solid magenta;
+    padding: 10px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.card p {
+    padding: 10px 0;
+}
+
+.card #date {
+    font-weight: 600;
 }
 
 /***************************/
