@@ -207,7 +207,7 @@ div#logo {
 /***************************/
 
 #features {
-    background: #c8a415;
+    background: #1b1b1b;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -239,6 +239,10 @@ div#logo {
     flex: 2 1 0;
 }
 
+#col-img img {
+    width: 100%;
+}
+
 .col#col-txt {
     border: thin solid green;
     width: 400px;
@@ -251,14 +255,14 @@ div#logo {
 }
 
 #features h2 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    color: #1b1b1b;
+    color: white;
 }
 
 #features p {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #1b1b1b;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
 }
 
 /***************************/
@@ -411,18 +415,38 @@ div#logo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Montserrat', sand-serif;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    padding: 50px 0;
 }
 
 #insta-feed {
     display: flex;
 }
 
+#insta-header {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#insta-header img {
+    vertical-align: middle;
+}
+
+#insta-header h2 {
+    font-weight: 400;
+}
+
 .card {
     max-width: 300px;
     width: 100%;
-    border: thin solid magenta;
     padding: 10px;
+    margin: 5px;
+    background-color: #fff;
+    border-radius: 5px;
 }
 
 .card img {
@@ -436,6 +460,15 @@ div#logo {
 
 .card #date {
     font-weight: 600;
+}
+
+/***************************/
+/* FOOTER */
+/***************************/
+
+#footer {
+    background-color: grey;
+    padding: 20px;
 }
 
 /***************************/

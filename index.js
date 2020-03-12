@@ -122,9 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    /***************************/
-    /* INSTAGRAM */
-    /***************************/
+    // /***************************/
+    // /* INSTAGRAM */
+    // /***************************/
     // const token = 'IGQVJWcFFJWWJsSGZAEazhsdXY2LU51ZA2JxV1MxQms3RkVPVklqMnFkZAmxCbjJUN1luWnE2TndiVy1fMkh0Q1hLVVdXa0lodDhWbEZAYZAnktUXF1dWdnMTFUVVFic2FMSFhOc2ZAmaE1R';
     // const app = document.getElementById('insta-feed');
     // let idArr = [];
@@ -142,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //     // Use only 4 most recent posts
     //     let idRecent = idArr.slice(0, 4);
+    //     console.log(idRecent)
 
     //     // Fetch individual posts by ID
     //     for (id of idRecent) {
@@ -163,8 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //                 const caption = document.createElement('p');
     //                 caption.setAttribute('id', 'caption');
-    //                 let formatCaption = fields.caption.replace('\n', '<br><br>')
-    //                 caption.innerHTML = formatCaption;
+    //                 let formatCaption = fields.caption.split('\n')
+    //                 caption.innerHTML = formatCaption[0];
 
     //                 // Convert the date from ISO to readable format
     //                 const timestamp = document.createElement('p');
@@ -175,8 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //                 app.appendChild(card);
                     
-    //                 card.appendChild(timestamp);
     //                 card.appendChild(link);
+    //                 card.appendChild(timestamp);
     //                 card.appendChild(caption);
     //             });
     //     };
