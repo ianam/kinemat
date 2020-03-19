@@ -59,7 +59,7 @@
 #header > h1 {
     text-align: center;
     font-size: 13vw;
-    font-family: "Righteous", cursive;
+    font-family: "Righteous", sans-serif;
     text-transform: uppercase;
     font-style: italic;
     font-weight: normal;
@@ -524,8 +524,10 @@ div#logo {
 /***************************/
 
 #footer {
-    background-color: grey;
+    background-color: #A0A0A0;
     padding: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
 }
 
 /***************************/
