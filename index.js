@@ -8,22 +8,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('header-container');
     const logo = document.getElementById('logo');
     const topScroll = document.getElementById('top-scroll');
+    const displayCondition = window.matchMedia('(min-width: 1000px)')
 
-    window.addEventListener('scroll', () => {
-        if (document.documentElement.scrollTop > 80) {
-            header.style.opacity = '0.9';
-            header.style.height = '60px'
-            logo.style['margin-bottom'] = '-70px';
-            logo.style.height = '100px';
-            topScroll.style.visibility = 'visible';
-        } else {
-            header.style.opacity = '1';
-            header.style.height = '110px'
-            logo.style['margin-bottom'] = '-100px';
-            logo.style.height = '180px';
-            topScroll.style.visibility = 'hidden';
-        }
-    });
+    if (displayCondition.matches) {
+        window.addEventListener('scroll', () => {
+            if (document.documentElement.scrollTop > 80) {
+                header.style.opacity = '0.9';
+                header.style.height = '60px'
+                logo.style['margin-bottom'] = '-70px';
+                logo.style.height = '100px';
+                topScroll.style.visibility = 'visible';
+            } else {
+                header.style.opacity = '1';
+                header.style.height = '110px'
+                logo.style['margin-bottom'] = '-100px';
+                logo.style.height = '180px';
+                topScroll.style.visibility = 'hidden';
+            }
+        });
+    }
 
     // Create smooth scroll on anchor link click
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -34,6 +37,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 behavior: 'smooth'
             });
         });
+    });
+
+    // Hamburger menu functionality on mobile
+    const hamButton = document.getElementById('hamburger');
+    const hamMenu = document.getElementById('hamburger-dropdown');
+
+    hamButton.addEventListener('click', () => {
+        if (hamMenu.style.display === 'none') {
+            hamMenu.style.display = 'flex';
+        } else {
+            hamMenu.style.display = 'none';
+        };
     });
     
     /***************************/

@@ -22,6 +22,7 @@
     height: 110px;
     z-index: 20;
     transition: 0.3s ease;
+    flex-wrap: wrap;
 }
 
 #header {
@@ -29,6 +30,26 @@
     align-items: flex-end;
     justify-content: center;
     width: 1200px;
+}
+
+#hamburger-dropdown {
+    display: none;
+    flex-direction: column;
+    text-align: right;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: lightgoldenrodyellow;
+    margin-top: -10px;
+    z-index: -10;
+}
+
+#hamburger-dropdown a {
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 50px;
+    font-weight: 600;
+    color: inherit;
 }
 
 .nav-link {
@@ -45,7 +66,6 @@
     cursor: pointer;
     background-color: #464646;
     color: #ffd54f;
-
 }
 
 .nav-link.hidden {
@@ -54,23 +74,6 @@
 
 #top-scroll {
     color: red;
-}
-
-#header > h1 {
-    text-align: center;
-    font-size: 13vw;
-    font-family: "Righteous", sans-serif;
-    text-transform: uppercase;
-    font-style: italic;
-    font-weight: normal;
-    color: #1b1b1b;
-}
-
-/* Set max font size for header to 13% of 800px viewport */
-@media screen and (min-width: 800px) {
-    #header > h1 {
-        font-size: 70px;
-    }
 }
 
 div#logo {
@@ -85,6 +88,68 @@ div#logo {
     transition: height 0.3s ease-out;
 }
 
+#header > h1 {
+    display: none;
+    font-size: 10vw;
+    font-family: "Righteous", sans-serif;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: normal;
+    color: #1b1b1b;
+    flex: 3 0 0;
+}
+
+#hamburger {
+    display: none;
+    flex: 1 0 0;
+    background-color: transparent;
+    border: none;
+}
+
+#hamburger img {
+    width: 40px;
+}
+
+/* TABLET - PORTRAIT */
+@media screen and (max-width: 1000px) {
+    div#logo {
+        max-width: 135px;
+        height: auto;
+        margin-bottom: -70px;
+    }
+}
+
+/* TABLET - PORTRAIT */
+@media screen and (max-width: 800px) {
+    .nav-link {
+        display: none;
+    }
+
+    #hamburger {
+        display: inline;
+    }
+
+    #header-container {
+        height: 13.7vw;
+    }
+
+    #header {
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    #header > h1 {
+        display: inline;
+    }
+
+    div#logo {
+        max-width: 12.5vw;
+        margin-bottom: -15px;
+        flex: 1 0 0;
+    }
+}
+
+
 /***************************/
 /* CARROUSEL */
 /***************************/
@@ -96,20 +161,12 @@ div#logo {
     padding-top: 130px;
 }
 
-/* below 1200px size container down to 38% of viewport */
 .carrousel-container {
     display: flex;
     flex-direction: column;
     position: relative;
     width: 100%;
-    height: 38vw;
-}
-
-/* at min 1200px window set carrousel container height to image height */
-@media screen and (min-width: 1200px) {
-    .carrousel-container {
-        height: 650px;
-    }
+    height: 650px;
 }
 
 .title {
@@ -133,7 +190,34 @@ div#logo {
 
 .title h1 {
     font-size: 70px;
-    margin-bottom: -40px;
+    margin-bottom: -35px;
+}
+
+/* TABLET - LANDSCAPE */
+@media screen and (max-width: 1024px) {
+    .carrousel-container {
+        height: 550px;
+    }
+
+    .title {
+        width: 300px;
+    }
+}
+
+/* TABLET - PORTRAIT */
+@media screen and (max-width: 834px) {
+    .carrousel-container {
+        height: 430px;
+    }
+
+    .title {
+        width: 200px;
+        top: 35px;
+    }
+
+    .title h1 {
+        margin-bottom: -28px;
+    }
 }
 
 .title h2 {
@@ -143,9 +227,23 @@ div#logo {
 .title h3 {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
-    font-size: 65px;
+    font-size: 60px;
     font-weight: 400;
     line-height: 1;
+}
+
+@media screen and (max-width: 1200px) {
+    .title h1 {
+        font-size: 5.8vw;
+    }
+
+    .title h2 {
+        font-size: 9.6vw;
+    }
+
+    .title h3 {
+        font-size: 5vw;
+    }
 }
 
 .carrousel-slide {
@@ -184,8 +282,8 @@ div#logo {
     background-color: #ccc;
 }
 
-/* hide carrousel nav & change carrousel sizing on mobile */
-@media screen and (max-width: 600px) {
+/* MOBILE */
+@media screen and (max-width: 800px) {
     #button-left, #button-right {
         display: none;
     }
@@ -336,9 +434,15 @@ div#logo {
     padding: 50px 0;
 }
 
+/* TABLET - LANDSCAPE */
+@media screen and (max-width: 1415px) {
+    #contact {
+        background-size: cover;
+    }
+}
+
 #contact-container {
     margin: 15px;
-    padding: 10px 5px;
     background-color: rgba(255,255,255,0.6);
     border-radius: 5px;
 }
@@ -428,6 +532,12 @@ div#logo {
     border-collapse: collapse;
 }
 
+@media screen and (max-width: 1200px) {
+    #price-table {
+        max-width: 90vw;
+    }
+}
+
 #price-table th, tr, td {
     border-bottom: 1px solid #1b1b1b;
     padding: 15px;
@@ -437,7 +547,6 @@ div#logo {
     font-family: "Righteous", sans-serif;
     font-style: italic;
     font-size: 50px;
-
 }
 
 #price-table th > img {
@@ -455,13 +564,6 @@ div#logo {
 #price-table td:first-child {
     width: 20%;
     font-weight: 600;
-}
-
-#note {
-    width: 1200px;
-    text-align: right;
-    font-style: italic;
-    padding: 5px 0;
 }
 
 /***************************/
@@ -487,6 +589,16 @@ div#logo {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
+
+@media screen and (max-width: 1200px) {
+    #insta-header {
+        width: 90vw;
+    }
+
+    #insta-feed {
+        padding: 0 15px;
+    }
 }
 
 #insta-header img {
