@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Change navbar display on scroll
     const header = document.getElementById('header-container');
     const logo = document.getElementById('logo');
+    const navLinks = Array.from(document.getElementsByClassName('nav-link'));
     const topScroll = document.getElementById('top-scroll');
-    const displayCondition = window.matchMedia('(min-width: 1000px)')
+    const displayCondition = window.matchMedia('(min-width: 1001px)')
 
     if (displayCondition.matches) {
         window.addEventListener('scroll', () => {
@@ -17,12 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 header.style.height = '60px'
                 logo.style['margin-bottom'] = '-70px';
                 logo.style.height = '100px';
+                navLinks.forEach(link => link.style['padding-top'] = '20px')
                 topScroll.style.visibility = 'visible';
             } else {
                 header.style.opacity = '1';
                 header.style.height = '110px'
                 logo.style['margin-bottom'] = '-100px';
                 logo.style.height = '180px';
+                navLinks.forEach(link => link.style['padding-top'] = '70px')
                 topScroll.style.visibility = 'hidden';
             }
         });
@@ -42,13 +45,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hamburger menu functionality on mobile
     const hamButton = document.getElementById('hamburger');
     const hamMenu = document.getElementById('hamburger-dropdown');
+    const hamLinks = Array.from(document.querySelectorAll('div#hamburger-dropdown > a'))
 
     hamButton.addEventListener('click', () => {
-        if (hamMenu.style.display === 'none') {
-            hamMenu.style.display = 'flex';
-        } else {
+        if (hamMenu.style.display === 'flex') {
             hamMenu.style.display = 'none';
+        } else {
+            hamMenu.style.display = 'flex';
         };
+    });
+
+    // Hide hamburger menu on click
+    hamLinks.forEach(link => {
+        link.addEventListener('click', () => hamMenu.style.display = 'none')
     });
     
     /***************************/

@@ -27,7 +27,7 @@
 
 #header {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: center;
     width: 1200px;
 }
@@ -38,7 +38,7 @@
     text-align: right;
     justify-content: flex-end;
     width: 100%;
-    background-color: lightgoldenrodyellow;
+    background-color: #fff59d;
     margin-top: -10px;
     z-index: -10;
 }
@@ -70,10 +70,6 @@
 
 .nav-link.hidden {
     align-self: flex-end;
-}
-
-#top-scroll {
-    color: red;
 }
 
 div#logo {
