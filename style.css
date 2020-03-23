@@ -608,13 +608,18 @@ div#logo {
     font-size: 50px;
 }
 
+#price-table th > img:hover, td > img:hover {
+    transform: scale(1.2);
+}
+
 #price-table th > img {
-    width: 80%;
+    width: 100%;
 }
 
 #price-table td > img {
     width: 50%;
 }
+
 
 #price-table td:not(:first-child) {
     text-align: center;
