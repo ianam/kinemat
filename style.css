@@ -103,7 +103,12 @@ div#logo {
 }
 
 #hamburger img {
-    width: 40px;
+    width: 50%;
+}
+
+.anchor {
+    padding-top: 50px;
+    margin-top: -50px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -142,6 +147,10 @@ div#logo {
         margin-bottom: -15px;
         flex: 1 0 0;
     }
+
+    .title {
+        width: 100px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -150,7 +159,7 @@ div#logo {
     }
     
     #header > h1 {
-        font-size: 50px;
+        font-size: 40px;
     }
 
     #header-container {
@@ -274,7 +283,7 @@ div#logo {
     }
 
     .title {
-        width: 25vw;
+        width: 100px;
     }
 
     .title h1 {
@@ -316,6 +325,7 @@ div#logo {
 
     .title {
         top: 5.5vw;
+        margin-left: -75px;
     }
 
     .title h1 {
@@ -548,6 +558,20 @@ div#logo {
 @media screen and (max-width: 800px) {
     #contact-cols {
         flex-direction: column;
+    }
+
+    #contact-form {
+        padding-right: 20px;
+    }
+
+    #contact-form .contact-row {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    #contact-form .contact-row div {
+        padding: 5px 0;
     }
 }
 
