@@ -106,7 +106,6 @@ div#logo {
     width: 40px;
 }
 
-/* TABLET - PORTRAIT */
 @media screen and (max-width: 1000px) {
     div#logo {
         max-width: 135px;
@@ -115,7 +114,7 @@ div#logo {
     }
 }
 
-/* TABLET - PORTRAIT */
+/* Mobile breakpoint */
 @media screen and (max-width: 800px) {
     .nav-link {
         display: none;
@@ -142,6 +141,20 @@ div#logo {
         max-width: 12.5vw;
         margin-bottom: -15px;
         flex: 1 0 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    div#logo {
+        max-width: 63px;
+    }
+    
+    #header > h1 {
+        font-size: 50px;
+    }
+
+    #header-container {
+        height: 68.5px;
     }
 }
 
@@ -189,59 +202,6 @@ div#logo {
     margin-bottom: -35px;
 }
 
-/* TABLET - LANDSCAPE */
-@media screen and (max-width: 1024px) {
-    .carrousel-container {
-        height: 550px;
-    }
-
-    .title {
-        width: 300px;
-    }
-}
-
-/* TABLET - PORTRAIT */
-@media screen and (max-width: 834px) {
-    .carrousel-container {
-        height: 430px;
-    }
-
-    .title {
-        width: 200px;
-        top: 35px;
-    }
-
-    .title h1 {
-        margin-bottom: -28px;
-    }
-}
-
-.title h2 {
-    font-size: 115px;
-}
-
-.title h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-size: 60px;
-    font-weight: 400;
-    line-height: 1;
-}
-
-@media screen and (max-width: 1200px) {
-    .title h1 {
-        font-size: 5.8vw;
-    }
-
-    .title h2 {
-        font-size: 9.6vw;
-    }
-
-    .title h3 {
-        font-size: 5vw;
-    }
-}
-
 .carrousel-slide {
     position: absolute;
     visibility: hidden;
@@ -278,21 +238,6 @@ div#logo {
     background-color: #ccc;
 }
 
-/* MOBILE */
-@media screen and (max-width: 800px) {
-    #button-left, #button-right {
-        display: none;
-    }
-
-    .dot-nav {
-        margin-top: 20px;
-    }
-
-    .carrousel {
-        padding-top: 10px;
-    }
-}
-
 .dot {
     height: 15px;
     width: 15px;
@@ -309,6 +254,77 @@ div#logo {
 
 .dot.active {
     background-color: #717171;
+}
+
+.title h2 {
+    font-size: 115px;
+}
+
+.title h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+@media screen and (max-width: 1200px) {
+    .carrousel-container {
+        height: 54vw;
+    }
+
+    .title {
+        width: 25vw;
+    }
+
+    .title h1 {
+        font-size: 5.8vw;
+    }
+
+    .title h2 {
+        font-size: 9.6vw;
+    }
+
+    .title h3 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .title {
+        top: 3.5vw;
+    }
+
+    .title h1 {
+        margin-bottom: -2.8vw;
+    }
+}
+
+/* Mobile breakpoint */
+@media screen and (max-width: 800px) {
+    #button-left, #button-right {
+        display: none;
+    }
+
+    .dot-nav {
+        margin-top: 30px;
+    }
+
+    .carrousel {
+        padding-top: 100px;
+    }
+
+    .title {
+        top: 5.5vw;
+    }
+
+    .title h1 {
+        margin-bottom: -2.8vw;
+    }
+
+    .title h3 {
+        margin-top: 10px;
+    }
 }
 
 /***************************/
@@ -334,17 +350,8 @@ div#logo {
     text-align: center;
 }
 
-/* wrap features col items on smaller screens */
-@media screen and (max-width: 800px) {
-    .feature-row {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
-
 .col#col-img {
     flex: 2 2;
-    /* border: thin solid green; */
 }
 
 #col-img img {
@@ -355,7 +362,6 @@ div#logo {
     width: 400px;
     flex: 2 1 0;
     line-height: 1.5;
-    /* border: thin solid red; */
 }
 
 .col#col-txt:nth-child(even) {
@@ -415,6 +421,33 @@ div#logo {
     margin: 0 20px;
 }
 
+/* Mobile breakpoint */
+@media screen and (max-width: 800px) {
+    .feature-row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .feature-row:nth-child(even) {
+        flex-direction: column-reverse;
+    }
+
+    .feature-header {
+        width: 85%;
+        padding: 30px 0;
+    }
+
+    .col#col-txt:nth-child(even), .col#col-txt:nth-child(odd) {
+        border-left: none;
+        border-right: none;
+    }
+
+    .col#col-txt {
+        width: 85%;
+        padding-bottom: 30px;
+    }
+}
+
 /***************************/
 /* CONTACT */
 /***************************/
@@ -428,13 +461,6 @@ div#logo {
     background-repeat: no-repeat;
     background-position: center;
     padding: 50px 0;
-}
-
-/* TABLET - LANDSCAPE */
-@media screen and (max-width: 1415px) {
-    #contact {
-        background-size: cover;
-    }
 }
 
 #contact-container {
@@ -463,7 +489,7 @@ div#logo {
 }
 
 #contact-cols #contact-info {
-    padding-top: 7px;
+    padding: 7px 0;
 }
 
 #contact-form input, textarea {
@@ -510,6 +536,19 @@ div#logo {
 
 #contact-form p {
     color: #1b1b1b;
+}
+
+@media screen and (max-width: 1415px) {
+    #contact {
+        background-size: cover;
+    }
+}
+
+/* Mobile breakpoint */
+@media screen and (max-width: 800px) {
+    #contact-cols {
+        flex-direction: column;
+    }
 }
 
 /***************************/
@@ -562,6 +601,22 @@ div#logo {
     font-weight: 600;
 }
 
+.mobile-label {
+    display: none;
+}
+
+/* Mobile breakpoint */
+@media screen and (max-width: 800px) {
+    #price-table td:first-child, th:first-child {
+        display: none;
+    }
+
+    .mobile-label {
+        display: inline;
+        font-weight: 600;
+    }
+}
+
 /***************************/
 /* INSTAGRAM */
 /***************************/
@@ -585,16 +640,6 @@ div#logo {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-}
-
-@media screen and (max-width: 1200px) {
-    #insta-header {
-        width: 90vw;
-    }
-
-    #insta-feed {
-        padding: 0 15px;
-    }
 }
 
 #insta-header img {
@@ -625,6 +670,24 @@ div#logo {
 
 .card #date {
     font-weight: 600;
+}
+
+@media screen and (max-width: 1200px) {
+    #insta-header {
+        width: 90vw;
+    }
+
+    #insta-feed {
+        padding: 0 15px;
+    }
+}
+
+/* Mobile breakpoint */
+@media screen and (max-width: 800px) {
+    #insta-feed {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 /***************************/

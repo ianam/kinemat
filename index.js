@@ -146,69 +146,69 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // /***************************/
-    // /* INSTAGRAM */
-    // /***************************/
-    // const token = 'IGQVJWcFFJWWJsSGZAEazhsdXY2LU51ZA2JxV1MxQms3RkVPVklqMnFkZAmxCbjJUN1luWnE2TndiVy1fMkh0Q1hLVVdXa0lodDhWbEZAYZAnktUXF1dWdnMTFUVVFic2FMSFhOc2ZAmaE1R';
-    // const app = document.getElementById('insta-feed');
-    // let idArr = [];
+    /***************************/
+    /* INSTAGRAM */
+    /***************************/
+    const token = 'IGQVJWcFFJWWJsSGZAEazhsdXY2LU51ZA2JxV1MxQms3RkVPVklqMnFkZAmxCbjJUN1luWnE2TndiVy1fMkh0Q1hLVVdXa0lodDhWbEZAYZAnktUXF1dWdnMTFUVVFic2FMSFhOc2ZAmaE1R';
+    const app = document.getElementById('insta-feed');
+    let idArr = [];
 
-    // // Get posts list
-    // fetch(`https://graph.instagram.com/17841419281502081/media?access_token=${token}`)
-    // .then(response => {
-    //     return response.json();
-    // })
-    // .then(posts => {
-    //     // For each piece of data, push the post ID into our ID array
-    //     for (el of posts.data) {
-    //         idArr.push(el.id);
-    //     }
+    // Get posts list
+    fetch(`https://graph.instagram.com/17841419281502081/media?access_token=${token}`)
+    .then(response => {
+        return response.json();
+    })
+    .then(posts => {
+        // For each piece of data, push the post ID into our ID array
+        for (el of posts.data) {
+            idArr.push(el.id);
+        }
 
-    //     // Use only 4 most recent posts
-    //     let idRecent = idArr.slice(0, 4);
-    //     console.log(idRecent)
+        // Use only 4 most recent posts
+        let idRecent = idArr.slice(0, 4);
+        console.log(idRecent)
 
-    //     // Fetch individual posts by ID
-    //     for (id of idRecent) {
-    //         fetch(`https://graph.instagram.com/${id}?fields=id,media_type,media_url,caption,permalink,timestamp&access_token=${token}`)
-    //             .then(response => {
-    //                 return response.json();
-    //             })
-    //             .then(fields => {
-    //                 // Use fields to populate the page with cards
-    //                 const card = document.createElement('div');
-    //                 card.setAttribute('class', 'card');
+        // Fetch individual posts by ID
+        for (id of idRecent) {
+            fetch(`https://graph.instagram.com/${id}?fields=id,media_type,media_url,caption,permalink,timestamp&access_token=${token}`)
+                .then(response => {
+                    return response.json();
+                })
+                .then(fields => {
+                    // Use fields to populate the page with cards
+                    const card = document.createElement('div');
+                    card.setAttribute('class', 'card');
 
-    //                 const image = document.createElement('img');
-    //                 image.src = fields.media_url;
+                    const image = document.createElement('img');
+                    image.src = fields.media_url;
 
-    //                 const link = document.createElement('a');
-    //                 link.href = fields.permalink;
-    //                 link.appendChild(image);
+                    const link = document.createElement('a');
+                    link.href = fields.permalink;
+                    link.appendChild(image);
 
-    //                 const caption = document.createElement('p');
-    //                 caption.setAttribute('id', 'caption');
-    //                 let formatCaption = fields.caption.split('\n')
-    //                 caption.innerHTML = formatCaption[0];
+                    const caption = document.createElement('p');
+                    caption.setAttribute('id', 'caption');
+                    let formatCaption = fields.caption.split('\n')
+                    caption.innerHTML = formatCaption[0];
 
-    //                 // Convert the date from ISO to readable format
-    //                 const timestamp = document.createElement('p');
-    //                 timestamp.setAttribute('id', 'date');
-    //                 let postDate = new Date(fields.timestamp).toUTCString();
-    //                 postDate = postDate.split(' ').slice(0, 4).join(' ');
-    //                 timestamp.textContent = postDate;
+                    // Convert the date from ISO to readable format
+                    const timestamp = document.createElement('p');
+                    timestamp.setAttribute('id', 'date');
+                    let postDate = new Date(fields.timestamp).toUTCString();
+                    postDate = postDate.split(' ').slice(0, 4).join(' ');
+                    timestamp.textContent = postDate;
 
-    //                 app.appendChild(card);
+                    app.appendChild(card);
                     
-    //                 card.appendChild(link);
-    //                 card.appendChild(timestamp);
-    //                 card.appendChild(caption);
-    //             });
-    //     };
-    // })
-    // .catch(error => {
-    //     console.log("There was an error", error)
-    // });
+                    card.appendChild(link);
+                    card.appendChild(timestamp);
+                    card.appendChild(caption);
+                });
+        };
+    })
+    .catch(error => {
+        console.log("There was an error", error)
+    });
 
     /***************************/
     /* CONTACT */
