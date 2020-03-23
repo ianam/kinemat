@@ -213,8 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
     /* CONTACT */
     /***************************/
 
-    const phone = document.getElementById('phone')
-    const submit = document.getElementById('submit')
+    const phone = document.getElementById('phone');
+    const contactForm = document.getElementById('contact-form');
+    const confirmation = document.getElementById('confirmation');
 
     phone.addEventListener('keydown', event => {
         const { currentTarget } = event;
@@ -237,9 +238,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    submit.addEventListener('submit', () => {
-        console.log('Submitted')
+    contactForm.addEventListener('submit', event => {
+        const request = new XMLHttpRequest();
+
+        request.open('POST', 'email-form.php');
+        request.onload = function() {
+            confirmation.style.display = 'block'
+        };
+
+        request.onerror = function() {
+            console.log('Request failed');
+        };
+
+        request.send(new FormData(event.target));
+        event.preventDefault();
     });
-
-
 });

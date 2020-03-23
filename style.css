@@ -548,6 +548,18 @@ div#logo {
     color: #1b1b1b;
 }
 
+#confirmation {
+    display: none;
+    text-align: center;
+    padding: 15px;
+    background-color: palegreen;
+    border: thin solid seagreen;
+}
+
+#confirmation p {
+    color: seagreen;
+}
+
 @media screen and (max-width: 1415px) {
     #contact {
         background-size: cover;
