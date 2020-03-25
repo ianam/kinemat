@@ -72,7 +72,7 @@
     align-self: flex-end;
 }
 
-div#logo {
+#logo {
     content: url(images/kinemat_logo.png);
     max-width: 25%;
     padding: 10px;
@@ -112,7 +112,7 @@ div#logo {
 }
 
 @media screen and (max-width: 1000px) {
-    div#logo {
+    #logo {
         max-width: 135px;
         height: auto;
         margin-bottom: -70px;
@@ -142,7 +142,7 @@ div#logo {
         display: inline;
     }
 
-    div#logo {
+    #logo {
         max-width: 12.5vw;
         margin-bottom: -15px;
         flex: 1 0 0;
@@ -154,7 +154,7 @@ div#logo {
 }
 
 @media screen and (max-width: 500px) {
-    div#logo {
+    #logo {
         max-width: 63px;
     }
     

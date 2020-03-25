@@ -57,7 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hide hamburger menu on click
     hamLinks.forEach(link => {
-        link.addEventListener('click', () => hamMenu.style.display = 'none')
+        link.addEventListener('click', () => hamMenu.style.display = 'none');
+    });
+
+    document.addEventListener('click', event => {
+        if (event.target.closest("div") !== header) {
+            hamMenu.style.display = 'none';
+        }
     });
     
     /***************************/
@@ -145,6 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
             nextSlide();
         });
     };
+
+    // Swiping on mobile moves in slide direction
+    
 
     /***************************/
     /* INSTAGRAM */
